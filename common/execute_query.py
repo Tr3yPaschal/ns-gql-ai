@@ -2,7 +2,7 @@ import os
 import requests
 from common.query_response import QueryResponse
 
-def execute_query(query_name, variables):
+def execute_query(query_name, operation_name, variables):
     # Load the query template
     query_path = os.path.join('gql_queries', f"{query_name}.gql")
     with open(query_path, 'r') as file:
@@ -16,7 +16,7 @@ def execute_query(query_name, variables):
     response = requests.post(
         url,
         headers=headers,
-        json={'operationName': query_name, 'query': query_string, 'variables': variables.get_variables()}
+        json={'operationName': operation_name, 'query': query_string, 'variables': variables.get_variables()}
     )
 
     # Check for a successful response
