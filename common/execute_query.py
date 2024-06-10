@@ -4,7 +4,7 @@ from common.query_response import QueryResponse
 
 def execute_query(query_name, variables):
     # Load the query template
-    query_path = os.path.join('queries', f"{query_name}.gql")
+    query_path = os.path.join('gql_queries', f"{query_name}.gql")
     with open(query_path, 'r') as file:
         query_string = file.read()
 

@@ -1,6 +1,7 @@
 from common.query import Query
 from common.query_variables import QueryVariables
 from common.execute_query import execute_query
+from common.terminal_colors import TerminalColors
 
 def main():
     # Define the query and variables
@@ -18,6 +19,7 @@ def main():
     hotel_list = execute_query(query_name, variables)
 
     # Print the response data
+    print(TerminalColors.color_text("Hotel Results", TerminalColors.GREEN))
     print(hotel_list.data)
 
     query_name = 'hotel'
@@ -29,7 +31,7 @@ def main():
     hotel_details = execute_query(query_name, variables)
 
     print("/n")
-
+    print(TerminalColors.color_text("Hotel Details", TerminalColors.GREEN))
     print(hotel_details.data)
 
 if __name__ == "__main__":
