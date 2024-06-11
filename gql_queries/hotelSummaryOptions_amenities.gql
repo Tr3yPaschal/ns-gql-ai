@@ -1,0 +1,18 @@
+query hotelSummaryOptions($amenityIds: [HotelAmenityId], $brandCodes: [String!], $ctyhocnQuery: String, $ctyhocns: [String!], $geometry: HotelGeometryInput, $input: HotelSummaryOptionsInput, $language: String!, $places: [HotelPlaceInput!]) {
+  hotelSummaryOptions(
+    amenityIds: $amenityIds
+    brandCodes: $brandCodes
+    ctyhocnQuery: $ctyhocnQuery
+    ctyhocns: $ctyhocns
+    geometry: $geometry
+    input: $input
+    language: $language
+    places: $places
+  ) {
+    amenityCategories {
+      name
+      id
+      amenityIds
+    }
+  }
+}

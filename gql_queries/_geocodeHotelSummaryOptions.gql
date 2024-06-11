@@ -1,0 +1,149 @@
+query geocodeHotelSummaryOptions($address: String, $distanceUnit: HotelDistanceUnit, $language: String!, $placeId: String, $queryLimit: Int!, $sessionToken: String) {
+  geocode(
+    language: $language
+    address: $address
+    placeId: $placeId
+    sessionToken: $sessionToken
+  ) {
+    match {
+      id
+      address {
+        city
+        country
+        state
+      }
+      name
+      type
+      geometry {
+        location {
+          latitude
+          longitude
+        }
+        bounds {
+          northeast {
+            latitude
+            longitude
+          }
+          southwest {
+            latitude
+            longitude
+          }
+        }
+      }
+    }
+    hotelSummaryOptions(distanceUnit: $distanceUnit, sortBy: distance) {
+      bounds {
+        northeast {
+          latitude
+          longitude
+        }
+        southwest {
+          latitude
+          longitude
+        }
+      }
+      amenities {
+        id
+        name
+        hint
+      }
+      amenityCategories {
+        name
+        id
+        amenityIds
+      }
+      brands {
+        code
+        name
+      }
+      hotels(first: $queryLimit) {
+        _id: ctyhocn
+        amenityIds
+        brandCode
+        ctyhocn
+        distance
+        distanceFmt
+        facilityOverview {
+          allowAdultsOnly
+        }
+        name
+        display {
+          open
+          openDate
+          preOpenMsg
+          resEnabled
+          resEnabledDate
+        }
+        contactInfo {
+          phoneNumber
+        }
+        address {
+          addressLine1
+          city
+          country
+          state
+        }
+        localization {
+          coordinate {
+            latitude
+            longitude
+          }
+        }
+        images {
+          master(variant: searchPropertyImageThumbnail) {
+            altText
+            variants {
+              size
+              url
+            }
+          }
+        }
+        tripAdvisorLocationSummary {
+          numReviews
+          rating
+          ratingFmt(decimal: 1)
+          ratingImageUrl
+          reviews {
+            id
+            rating
+            helpfulVotes
+            ratingImageUrl
+            text
+            travelDate
+            user {
+              username
+            }
+            title
+          }
+        }
+        leadRate {
+          hhonors {
+            max {
+              rateAmount
+              rateAmountFmt
+              dailyRmPointsRate
+              dailyRmPointsRateFmt
+              ratePlan {
+                ratePlanCode
+              }
+            }
+            min {
+              rateAmount
+              rateAmountFmt
+              dailyRmPointsRate
+              dailyRmPointsRateFmt
+              ratePlan {
+                ratePlanCode
+              }
+            }
+          }
+        }
+      }
+    }
+    ctyhocnList: hotelSummaryOptions(distanceUnit: $distanceUnit, sortBy: distance) {
+      hotelList: hotels(first: 150) {
+        ctyhocn
+      }
+    }
+  }
+}

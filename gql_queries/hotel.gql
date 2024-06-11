@@ -1,0 +1,17 @@
+query hotel($language: String!, $ctyhocn: String!) {
+  hotel(language: $language, ctyhocn: $ctyhocn) {
+    name
+    address {
+      addressFmt
+      addressLine1
+      addressLine2
+      city
+      country
+      postalCode
+      state
+    }
+    amenities {
+      name
+    }
+  }
+}

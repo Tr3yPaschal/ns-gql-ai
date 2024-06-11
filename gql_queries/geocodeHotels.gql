@@ -1,0 +1,40 @@
+query geocodeHotels($address: String, $distanceUnit: HotelDistanceUnit, $language: String!, $placeId: String, $sessionToken: String) {
+  geocode(
+    language: $language
+    address: $address
+    placeId: $placeId
+    sessionToken: $sessionToken
+  ) {
+    match {
+      id
+      address {
+        city
+        country
+        state
+      }
+      name
+      type
+      geometry {
+        location {
+          latitude
+          longitude
+        }
+        bounds {
+          northeast {
+            latitude
+            longitude
+          }
+          southwest {
+            latitude
+            longitude
+          }
+        }
+      }
+    }
+    ctyhocnList: hotelSummaryOptions(distanceUnit: $distanceUnit, sortBy: distance) {
+      hotelList: hotels(first: 150) {
+        ctyhocn
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+query hotelPolicy($ctyhocn: String!, $language: String!, $filter: HotelAdditionalPolicyFilterInput) {
+  hotel(ctyhocn: $ctyhocn, language: $language) {
+    parking {
+      accessibleParkingInSelfParkingFacility
+      chargedSelf
+      chargedSelfAccess
+      chargedValet
+      controlledAccessGatesToParkingArea
+      digitalKeyAntiPassback
+      evCharging {
+        chargingComments
+        chargingUnitDistance
+        chargingUnitDistanceFmt
+        chargingUnitDistanceUOM
+        hasChargingNearby
+        hasChargingOnsite
+      }
+      hasAccessGateParking
+      hasAccessibleParking
+      hasCoveredParking
+      hasFreeParking
+      hasInOutParkingPrivilege
+      hasOnsiteParking
+      hasParkingFacility
+      hasSecuredParking
+      hasSelfParking
+      hasValetParking
+      inOutPrivileges
+      isParkingFeesManagedByHotel
+      isParkingFeesSetByHotel
+      otherParkingInfo
+      otherParkingInformation
+      selfDesc
+      selfDescs
+      selfParkingCharge {
+        chargeAmount
+        chargeAmountFmt
+        chargeQuantifier
+        parkingComments
+      }
+      selfParkingComments
+      valetDesc
+      valetDescs
+      valetOnlyParking
+      valetParkingCharge {
+        chargeAmount
+        chargeAmountFmt
+        chargeQuantifier
+        parkingComments
+      }
+      valetParkingComments
+      vanAccessibleParking
+    }
+    pets {
+      description
+      descriptions
+      kennelServiceDesc
+      kennelServiceOffered
+      otherServiceDesc
+      otherServiceOffered
+      petCharge
+      petChargeFmt
+      petChargeRefundable
+      petMaxSize
+      petMaxWeight {
+        amount
+        amountFmt
+        unitOfMass
+      }
+      petMaxWeightFmt
+      petsAllowed
+      servicePetsAllowed
+      servicePetsDesc
+    }
+    policy {
+      wifi {
+        _id
+        freeWlanMsg
+        hsia
+        inRoomHsia
+        inRoomHsiaFee
+        inRoomHsiaFeeFmt
+        wlanInRoom
+        wlanInRoomDesc
+        wlanInRoomDisclaimer
+        wlanInRoomFee
+        wlanInRoomFeeFmt
+        wlanPublic
+        wlanPublicFee
+        wlanPublicFeeFmt
+      }
+      parking {
+        _id
+        chargedSelf
+        chargedSelfAccess
+        chargedValet
+        selfDesc
+        valetDesc
+      }
+      smoking {
+        _id
+        nonSmokingDesc
+        smokingDesc
+      }
+      additionalPolicies(filter: $filter) {
+        headline
+        link {
+          adaDescription
+          isNewWindow
+          label
+          url
+        }
+        subType
+        terms {
+          components {
+            id
+            type
+            index
+          }
+          description {
+            id
+            value
+          }
+          heading {
+            value
+            id
+          }
+          orderedList {
+            id
+            value
+          }
+          unorderedList {
+            id
+            value
+          }
+        }
+        type
+      }
+      payment {
+        bankValidationMsg
+      }
+    }
+    address {
+      country
+      countryName
+    }
+  }
+}
