@@ -2,36 +2,11 @@ from common.query import Query
 from common.query_variables import QueryVariables
 from common.execute_query import execute_query
 from common.terminal_colors import TerminalColors
-from common.hms_api import HMS_API
+from common.localRec import LocalRec
 
 def main():
     
 # Define your constants
-
-    base_url = "https://hmsstg.hiltonapi.com/hms/v1/"
-    method_signature = "core/localRecommendations"
-    querystring = {"ctyhocn": "DCAOTHF"}
-    secret_key = "52tBVaCe"
-    app_key = "hhonors"
-    device_id = "a235c98737c63559"
-
-    # Create an instance of HMS_API
-    api = HMS_API(base_url, method_signature, querystring, secret_key, app_key, device_id)
-
-    # Example usage of set_json_attribute method
-    config_name = "example_config"
-    version = "1.0"
-    attribute_name = "example_attribute"
-    attribute_json = {"key": "value"}
-
-    response = api.set_json_attribute(config_name, version, attribute_name, attribute_json)
-
-    # Handle the response
-    if response.has_error:
-        print(f"Error: {response.response_value}")
-    else:
-        print(f"Success: {response.response_value}")
-    
     """ query_name = 'geocodeHotels'
     operation_name = 'geocodeHotels'
     variables = QueryVariables(
