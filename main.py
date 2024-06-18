@@ -35,7 +35,7 @@ def main():
         print("\n") """
 
     # hotelSumarryOptions
-    """query_name = 'geocodeHotelSummaryOptions'
+    query_name = 'geocodeHotelSummaryOptions'
     operation_name = 'geocodeHotelSummaryOptions'
     variables = QueryVariables(
         address="Dallas",
@@ -50,13 +50,13 @@ def main():
     hotel_list = execute_query(query_name,operation_name, variables)
 
     print(TerminalColors.color_text("Hotel Results", TerminalColors.GREEN))
-    print(hotel_list.data)"""
+    print(hotel_list.data)
 
     
 
 
-    #hotelSumarryOptionsAmenities
-    """query_name = 'hotelSummaryOptions_amenities'
+    """ #hotelSumarryOptionsAmenities
+    query_name = 'hotelSummaryOptions_amenities'
     operation_name = 'hotelSummaryOptions'
     variables = QueryVariables(
         ctyhocn= ["LAXAVCI","DCAOTHF"],
@@ -67,10 +67,11 @@ def main():
 
     print("/n")
     print(TerminalColors.color_text("Hotel Amenities", TerminalColors.GREEN))
-    print(hotel_amenitites.data)"""
+    print(hotel_amenitites.data) """
+
 
     #hotelPolicy
-    """query_name = 'hotelPolicy'
+    query_name = 'hotelPolicy'
     operation_name = 'hotelPolicy'
     variables = QueryVariables(
         ctyhocn= "LAXAVCI",
@@ -81,7 +82,7 @@ def main():
 
     print("\n")
     print(TerminalColors.color_text("Hotel Policy", TerminalColors.GREEN))
-    print(hotel_policy.data)"""
+    print(hotel_policy.data)
 
 if __name__ == "__main__":
     main()

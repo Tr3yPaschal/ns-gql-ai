@@ -1,0 +1,70 @@
+{
+  "data": {
+    "hotelSummaryOptions": {
+      "amenityCategories": [
+        {
+          "name": "Dining",
+          "id": "dining",
+          "amenityIds": [
+            "freeBreakfast",
+            "eveningReception",
+            "dining",
+            "roomService"
+          ]
+        },
+        {
+          "name": "Guest Services",
+          "id": "guestServices",
+          "amenityIds": [
+            "freeParking",
+            "freeWifi",
+            "digitalKey",
+            "concierge",
+            "airportShuttle",
+            "evCharging"
+          ]
+        },
+        {
+          "name": "Fitness & Health",
+          "id": "fitness",
+          "amenityIds": ["indoorPool", "outdoorPool", "fitnessCenter", "spa"]
+        },
+        {
+          "name": "Recreation",
+          "id": "recreation",
+          "amenityIds": ["beach", "golf", "tennisCourt", "ski"]
+        },
+        {
+          "name": "Hotel Type",
+          "id": "type",
+          "amenityIds": [
+            "resort",
+            "allInclusive",
+            "luxury",
+            "boutique",
+            "newHotel"
+          ]
+        },
+        {
+          "name": "Hotel Features",
+          "id": "features",
+          "amenityIds": [
+            "adjoiningRooms",
+            "petsAllowed",
+            "nonSmoking",
+            "executiveLounge",
+            "petsNotAllowed"
+          ]
+        },
+        {
+          "name": "Business & Work",
+          "id": "business",
+          "amenityIds": ["businessCenter", "meetingRooms"]
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "logSearch": "mdc.client_message_id=b64a4e2d-76ab-4097-a8a0-e2a4492d57c1-81maf10vg7qous4vj0zcjphladaavcklc"
+  }
+}
