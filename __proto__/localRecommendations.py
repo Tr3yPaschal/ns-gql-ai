@@ -12,7 +12,7 @@ app_key = "hhonors"
 device_id = "a235c98737c63559"
 
 def get_utc_datetime():
-    return datetime.now(timezone.utc).replace(tzinfo=None).isoformat(timespec="milliseconds") + "Z"
+    return 
 
 def get_hms_api_headers():
     current_utc_datetime = get_utc_datetime()
@@ -25,7 +25,10 @@ def get_hms_api_headers():
     }
     return headers
 
-def get_hms_hmac(secret_key, current_utc_datetime, method_endpoint):
+
+
+def get_hms_hmac(secret_key, current_utc_datetime, method_signature):
+    
     signature_string = f"{secret_key.decode()}&{current_utc_datetime}&{method_signature}".encode()  # Convert to byte string
     hmac_sha1 = hmac.new(secret_key, signature_string, hashlib.sha1)    
     hmac_result = hmac_sha1.hexdigest()
